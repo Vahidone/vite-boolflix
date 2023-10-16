@@ -14,6 +14,7 @@ export default {
       <p class="mt-5">Nome	:	{{ card.title }}</p>
       <p>Titolo originale	:	{{ card.original_title }}</p>
       <p>lingua	:	{{ card.original_language }}</p>
+      <p>Trama : {{ card.overview }}</p>
       <p>Voto	:	{{ card.vote_average }}</p>
     </div>
   </div>
@@ -23,17 +24,18 @@ export default {
 .my-card{
   position: relative;
   .my-hover{
-    position: absolute;
-    font-size: 24px;
-    text-align: center;
-    opacity: 0;
     width: 100%;
     height: 100%;
+    position: absolute;
+    font-size: 18px;
+    text-align: center;
+    opacity: 0;
     top: 0;
     left: 0;
+    padding: 0 20px;
+    overflow: auto;
     background-color: rgba(0, 0, 0, .7);
     cursor: pointer;
-    padding: 16px;
     &:hover{
       opacity: 1;
     }

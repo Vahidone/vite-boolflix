@@ -23,7 +23,7 @@ export default {
   methods: {
     getApi(apiUrl){
 
-      axios.get(apiUrl,{
+      axios.get(apiUrl, {
         params:{
           query: store.query,
           api_key: store.apiKey,
