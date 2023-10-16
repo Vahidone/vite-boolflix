@@ -37,7 +37,12 @@ export default {
     padding: 0 100px;
       figure {
         width: 200px;
-        height: 30px;
+        height: 40px;
+         img {
+          max-width: 100%;
+          height: 100%;
+          object-fit: cover;
+         }
       }
       .search-box {
         width: 400px;
