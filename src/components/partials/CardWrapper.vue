@@ -1,0 +1,37 @@
+<script>
+import { store } from '../../data/store';
+import Cards from './Cards.vue';
+
+
+
+export default {
+  name: "CardWrapper",
+  components:{
+    Cards
+  },
+  data() {
+    return {
+      store
+    }
+  },
+}
+</script>
+
+<template>
+  <div class="container">
+    <h2 class="text-center mt-3  mb-5">All Films</h2>
+    <div class="card-box">
+      <Cards :card="card"  v-for="(card , index) in store.apiResFilm.results" :key="index"/>
+    </div>
+  </div>
+</template>
+
+<style lang="scss" scoped>
+  .card-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+</style>
