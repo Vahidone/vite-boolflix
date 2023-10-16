@@ -1,22 +1,28 @@
-
 <script>
-import CardContainer from './partials/CardContainer.vue';
-import Cards from './partials/Cards.vue';
-export default {
-  name: 'Main',
-  components: {
-    CardContainer,
-    Cards
-  }
 
+import CardWrapper from './partials/CardWrapper.vue';
+
+export default {
+  name: "Main",
+  components:{
+    CardWrapper
+  }
 }
 </script>
 
 <template>
-  <h2>Main</h2>
+  <main>
+    <CardWrapper />
+  </main>
 </template>
 
-
-<style lang="scss"> 
-
+<style lang="scss" scoped>
+  main{
+    overflow-y: auto;
+    width: 100%;
+    height: calc(100vh - 150px);
+    background-color: #171717;
+    color: white;
+    
+  }
 </style>
