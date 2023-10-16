@@ -18,8 +18,8 @@ export default {
 </script>
 
 <template>
-  <div class="container">
-    <h2 class="text-center mt-3  mb-5">All Films</h2>
+  <div class="my-container">
+    <h2 class="text-center mt-3 mb-5">All Films</h2>
     <div class="card-box">
       <Cards :card="card"  v-for="(card , index) in store.apiResFilm.results" :key="index"/>
     </div>
@@ -27,11 +27,17 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+.my-container {
+  width: 70%;
+  margin: 0 auto;
   .card-box {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
   }
+
+}
+ 
 
 </style>
