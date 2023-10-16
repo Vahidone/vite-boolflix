@@ -10,7 +10,7 @@ export const store = reactive({
   
   language: "it_IT",
 
-  query:"one piece",
+  query:"Red",
  
   
 })
