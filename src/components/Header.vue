@@ -22,7 +22,7 @@ export default {
         <option>Film</option>
         <option>Serie</option>
       </select>
-    </div>
+    </div>  
 
   </header>
 </template>
@@ -30,7 +30,7 @@ export default {
 <style lang="scss" scoped>
   header{
     background-color: black;
-    height: 100px;
+    height: 150px;
     display: flex;
     justify-content: space-between;
     align-items: center;
