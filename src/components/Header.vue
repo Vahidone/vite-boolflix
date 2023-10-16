@@ -1,16 +1,55 @@
-
 <script>
+import { store } from '../data/store';
 export default {
-  name: 'Header'
-
+  name: "Header",
+  data() {
+    return {
+      store
+    }
+  },
 }
 </script>
 
 <template>
-  <h2>Header</h2>
+  <header>
+    <figure>
+      <img src="/public/logo-boolflix copy.png" alt="logo">
+    </figure>
+    <div class="search-box">
+      <input type="text" v-model="store.query" @keyup.enter="$emit('startSearch')"  class="form-control">
+      <select class="form-select">
+        <option selected>All</option>
+        <option>Film</option>
+        <option>Serie</option>
+      </select>
+    </div>
+
+  </header>
 </template>
 
-
-<style lang="scss"> 
-
+<style lang="scss" scoped>
+  header{
+    background-color: black;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 100px;
+      figure {
+        width: 200px;
+        height: 30px;
+      }
+      .search-box {
+        width: 400px;
+        display: flex;
+        gap: 8px;
+        input{
+          width: 70%;
+        }
+        select{
+          width: 30%;
+        }
+      }
+  
+  }
 </style>
