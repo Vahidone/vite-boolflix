@@ -19,10 +19,11 @@ export default {
 
 <template>
   <div class="my-container">
-    <h2 class="text-center mt-3 mb-5">All Films</h2>
+    <h2>Film</h2>
     <div class="card-box">
       <Cards :card="card"  v-for="(card , index) in store.apiResFilm.results" :key="index"/>
     </div>
+
   </div>
 </template>
 
@@ -30,6 +31,10 @@ export default {
 .my-container {
   width: 70%;
   margin: 0 auto;
+   h2 {
+    text-align: center;
+   margin: 70px 0;
+   }
   .card-box {
     display: flex;
     flex-wrap: wrap;

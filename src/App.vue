@@ -19,7 +19,6 @@ export default {
   },
 
 
-
   methods: {
     getApi(apiUrl){
 
@@ -57,6 +56,7 @@ export default {
 <template>
   <Header @startSearch="getApi(store.apiUrlFilm)" />
   <Main />
+ 
 </template>
 
 <style lang="scss">

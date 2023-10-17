@@ -16,7 +16,7 @@ export default {
       <img src="/public/logo-boolflix copy.png" alt="logo">
     </figure>
     <div class="search-box">
-      <input type="text" v-model="store.query" @keyup.enter="$emit('startSearch')"  class="form-control">
+      <input type="text" v-model.trim="store.query" @keyup.enter="$emit('startSearch')"  class="form-control">
       <select class="form-select">
         <option selected>All</option>
         <option>Film</option>
