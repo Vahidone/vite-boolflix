@@ -13,7 +13,7 @@ export default {
 <template>
   <header>
     <figure>
-      <img src="/public/logo-boolflix copy.png" alt="logo">
+      <img src="/logo-boolflix copy.png" alt="logo">
     </figure>
     <div class="search-box">
       <input type="text" v-model.trim="store.query" @keyup.enter="$emit('startSearch')"  class="form-control">
@@ -24,6 +24,7 @@ export default {
       </select>
     </div>  
 
+    
   </header>
 </template>
 

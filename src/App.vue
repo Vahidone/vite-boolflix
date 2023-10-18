@@ -5,7 +5,6 @@ import Header from './components/Header.vue'
 import Main from './components/Main.vue'
 
 
-
 export default {
   name: "App",
   components:{
@@ -14,15 +13,16 @@ export default {
   },
   data() {
     return {
-      store
+      store,
+  
     }
   },
 
 
   methods: {
-    getApi(apiUrl){
+    getApi(type){
 
-      axios.get(apiUrl, {
+      axios.get(store.apiUrl + type, {
         params:{
           query: store.query,
           api_key: store.apiKey,
@@ -31,31 +31,30 @@ export default {
         }
       })
       .then((res) => {
-        
-        if(apiUrl.includes("movie")){
-          store.apiResFilm = res.data;
-        }
-        if(apiUrl.includes("tv")){
-          store.apiResSerie = res.data;
-        }
+        store[type] = res.data.results
     
       })
 
-      .catch((error) => {
-        console.log(error);
+      .catch((err) => {
+        console.log(err);
       })
+    },
+
+    startSearch () {
+      this.getApi('movie'),
+      this.getApi('tv')
+
     }
   },
-  mounted() {
-    this.getApi(store.apiUrlFilm);
-    this.getApi(store.apiUrlSerie);
-  },
+
 }
 </script>
 
 <template>
-  <Header @startSearch="getApi(store.apiUrlFilm)" />
+  <Header @startSearch="startSearch" />
   <Main />
+  
+  
  
 </template>
 

@@ -6,6 +6,11 @@ import Cards from './Cards.vue';
 
 export default {
   name: "CardWrapper",
+
+  props: {
+    title: String,
+    type: String
+  },
   components:{
     Cards
   },
@@ -19,17 +24,18 @@ export default {
 
 <template>
   <div class="my-container">
-    <h2>Film</h2>
+    <h2>{{ title }}</h2>
     <div class="card-box">
-      <Cards :card="card"  v-for="(card , index) in store.apiResFilm.results" :key="index"/>
+      <Cards :card="card"  v-for="(card , index) in store[type]" :key="index"/>
     </div>
 
   </div>
 </template>
 
+
 <style lang="scss" scoped>
 .my-container {
-  width: 70%;
+  width: 80%;
   margin: 0 auto;
    h2 {
     text-align: center;

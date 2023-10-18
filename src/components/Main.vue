@@ -1,18 +1,28 @@
 <script>
+import { store } from "../data/store";
 
 import CardWrapper from './partials/CardWrapper.vue';
+
 
 export default {
   name: "Main",
   components:{
     CardWrapper
+  },
+  data () {
+    return {
+      store
+    }
   }
 }
 </script>
 
 <template>
   <main>
-    <CardWrapper />
+    <CardWrapper title="Film" type="movie"/>
+    <CardWrapper title="Serie Tv" type="tv" />
+    
+   
   </main>
 </template>
 
